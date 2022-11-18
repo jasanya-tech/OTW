@@ -1,11 +1,11 @@
 <?php 
 class Admin_model extends CI_Model {
 
-    public $email;
-    public $nama;
-    public $foto;
-    public $password;
-    public $jenis_kelamin;
+    public $Email;
+    public $Nama;
+    public $Foto;
+    public $Password;
+    public $Jenis_kelamin;
 
     
     public function read_all()
@@ -20,7 +20,7 @@ class Admin_model extends CI_Model {
         $this->Foto = $data['Foto'];
         $this->Password = $data['Password'];
         $this->Jenis_kelamin = $data['Jenis_kelamin'];
-        $this->db->insert('Admin', $this);
+        $this->db->insert('admin', $this);
     }
     
     public function update($data)
@@ -30,7 +30,7 @@ class Admin_model extends CI_Model {
         $this->Foto = $data['Foto'];
         $this->Password = $data['Password'];
         $this->Jenis_kelamin = $data['Jenis_kelamin'];
-        $this->db->update('Admin', $this, ['Id_admin' = $data['Id_Admin']]);
+        $this->db->update('Admin', $this, ['Id_admin' = $data['Id_admin']]);
     }
 
     public function delete($Id_admin)
