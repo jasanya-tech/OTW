@@ -35,7 +35,7 @@
 
 <div class="sidebar">
     <a class="active" href="<?= base_url('admin') ?>">Dashboard</a>
-    <a href="#news">Tiket</a>
-    <a href="#contact">Transaksi</a>
+    <a href="<?= base_url("/tiket") ?>">Tiket</a>
+    <a href="<?= base_url("/transaksi") ?>">Transaksi</a>
     <a href="#about">User</a>
 </div>

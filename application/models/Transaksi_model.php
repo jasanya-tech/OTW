@@ -1,5 +1,6 @@
-<?php 
-class Transaksi_model extends CI_Model {
+<?php
+class Transaksi_model extends CI_Model
+{
 
     public $qty;
     public $Total;
@@ -8,11 +9,10 @@ class Transaksi_model extends CI_Model {
     public $Id_MP;
     public $Id_admin;
 
-    
+
     public function read_all()
     {
         return $query = $this->db->get('transaksi')->result();
-            
     }
     public function create($data)
     {
@@ -24,7 +24,7 @@ class Transaksi_model extends CI_Model {
         $this->Id_admin = $data['Id_admin'];
         $this->db->insert('transaksi', $this);
     }
-    
+
     public function update($data)
     {
         $this->qty = $data['qty'];
@@ -33,12 +33,11 @@ class Transaksi_model extends CI_Model {
         $this->Id_pengunjung = $data['Id_pengunjung'];
         $this->Id_MP = $data['Id_MP'];
         $this->Id_admin = $data['Id_admin'];
-        $this->db->update('transaksi', $this, ['Id_transaksi' = $data['Id_transaksi']]);
+        $this->db->update('transaksi', $this, ['Id_transaksi' => $data['Id_transaksi']]);
     }
 
-    public function delete($transaksi)
+    public function delete($Id_transaksi)
     {
-        $this->db->delete('transaksi', ['Id_transaksi' = $Id_transaksi]);
+        $this->db->delete('transaksi', ['Id_transaksi' => $Id_transaksi]);
     }
-    
 }

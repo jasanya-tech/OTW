@@ -1,5 +1,6 @@
-<?php 
-class Admin_model extends CI_Model {
+<?php
+class Admin_model extends CI_Model
+{
 
     public $Email;
     public $Nama;
@@ -7,11 +8,10 @@ class Admin_model extends CI_Model {
     public $Password;
     public $Jenis_kelamin;
 
-    
+
     public function read_all()
     {
         return $query = $this->db->get('admin')->result();
-            
     }
     public function create($data)
     {
@@ -22,7 +22,7 @@ class Admin_model extends CI_Model {
         $this->Jenis_kelamin = $data['Jenis_kelamin'];
         $this->db->insert('admin', $this);
     }
-    
+
     public function update($data)
     {
         $this->Email = $data['Email'];
@@ -30,12 +30,11 @@ class Admin_model extends CI_Model {
         $this->Foto = $data['Foto'];
         $this->Password = $data['Password'];
         $this->Jenis_kelamin = $data['Jenis_kelamin'];
-        $this->db->update('Admin', $this, ['Id_admin' = $data['Id_admin']]);
+        $this->db->update('Admin', $this, ['Id_admin' => $data['Id_admin']]);
     }
 
     public function delete($Id_admin)
     {
-        $this->db->delete('Admin', ['Id_admin' = $Id_admin]);
+        $this->db->delete('Admin', ['Id_admin' => $Id_admin]);
     }
-    
 }
