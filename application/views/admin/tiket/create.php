@@ -3,6 +3,7 @@
 
 <div class="content">
     <?= $this->session->flashdata('alert') ?>
+    <h1>Form tambah tiket</h1>
     <form action="<?= current_url() ?>" method="POST">
         <label for="">kategori hari</label>
         <select class="form-select" name="kategori_hari">

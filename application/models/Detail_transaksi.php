@@ -6,8 +6,6 @@ class Detail_transaksi extends CI_Model
     public $Id_transaksi;
     public $Id_tiket;
 
-
-
     public function read_all()
     {
         return $query = $this->db->get('admin')->result();
