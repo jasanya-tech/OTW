@@ -34,7 +34,7 @@
 </style>
 
 <div class="sidebar">
-    <a class="active" href="<?= base_url('admin') ?>">Dashboard</a>
-    <a href="<?= base_url("/tiket") ?>">Tiket</a>
-    <a href="<?= base_url("/transaksi") ?>">Transaksi</a>
+    <a class="<?= str_contains(current_url(), 'admin') ? 'active' : '' ?>" href="<?= base_url('admin') ?>">Dashboard</a>
+    <a class="<?= str_contains(current_url(), 'tiket') ? 'active' : '' ?>" href="<?= base_url("tiket") ?>">Tiket</a>
+    <a class="<?= str_contains(current_url(), 'transaksi') ? 'active' : '' ?>" href="<?= base_url("transaksi") ?>">Transaksi</a>
 </div>
