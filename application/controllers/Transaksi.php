@@ -15,12 +15,6 @@ class Transaksi extends CI_Controller {
         $this->load->view('admin/transaksi/create');
         $this->load->view('layouts/footer');
     }
-    public function update()
-    {
-        $this->load->view('layouts/head');
-        $this->load->view('admin/transaksi/update');
-        $this->load->view('layouts/footer');
-    }
     public function delete()
     {
         echo "Fitur delete transaksi";
