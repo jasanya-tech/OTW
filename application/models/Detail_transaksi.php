@@ -4,7 +4,7 @@ class Detail_transaksi extends CI_Model {
     public $tanggal_kunjungan;
     public $Id_transaksi;
     public $Id_tiket;
-    
+     
 
     
     public function read_all()
