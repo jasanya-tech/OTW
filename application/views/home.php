@@ -8,7 +8,7 @@
 
                 .swiper-slide img {
                     width: 100%;
-                    height: 520px;
+                    height: calc(100vh - 128px);
                     object-fit: cover;
                 }
             </style>
