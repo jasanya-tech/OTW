@@ -2,27 +2,34 @@
 <?php $this->load->view('layouts/sidebar'); ?>
 
 <div class="content">
-    <?= $this->session->flashdata('alert') ?>
     <h1>Form tambah tiket</h1>
-    <form action="<?= current_url() ?>" method="POST">
-        <label for="">kategori hari</label>
-        <select class="form-select" name="kategori_hari">
-            <option value="">Pilih kategori hari</option>
-            <option value="Weekend">Weekend</option>
-            <option value="Weekday">Weekday</option>
-        </select>
-        <?php echo form_error('kategori_hari'); ?>
-        <label for="">harga</label>
-        <input type="number" class="form-control" name="harga">
-        <?php echo form_error('harga'); ?>
-        <label for="">jam mulai kunjungan</label>
-        <input type="time" class="form-control" name="jam_mulai_kunjungan">
-        <?php echo form_error('jam_mulai_kunjungan'); ?>
-        <label for="">jam selesai kunjungan</label>
-        <input type="time" class="form-control" name="jam_selesai_kunjungan">
-        <?php echo form_error('jam_selesai_kunjungan'); ?>
-        <div class="my-2 text-center">
+    <div class="col-lg-6">
+        <form action="<?= current_url() ?>" method="POST">
+            <div class="mb-3">
+                <label for="kategori_hari" class="form-label">kategori hari</label>
+                <select class="form-select" name="kategori_hari">
+                    <option value="">Pilih kategori hari</option>
+                    <option value="Weekend">Weekend</option>
+                    <option value="Weekday">Weekday</option>
+                </select>
+                <?= form_error("kategori_hari", '<small class="text-danger">', "</small>"); ?>
+            </div>
+            <div class="mb-3">
+                <label for="harga" class="form-label">harga</label>
+                <input type="number" class="form-control" name="harga" id="harga">
+                <?= form_error("harga", '<small class="text-danger">', "</small>"); ?>
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">jam mulai kunjungan</label>
+                <input type="time" class="form-control" name="jam_mulai_kunjungan">
+                <?= form_error("jam_mulai_kunjungan", '<small class="text-danger">', "</small>"); ?>
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">jam selesai kunjungan</label>
+                <input type="time" class="form-control" name="jam_selesai_kunjungan">
+                <?= form_error("jam_selesai_kunjungan", '<small class="text-danger">', "</small>"); ?>
+            </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>

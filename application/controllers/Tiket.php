@@ -8,13 +8,23 @@ class Tiket extends CI_Controller
         parent::__construct();
         $this->load->model('Tiket_model', 'tiket');
     }
+
     public function index()
     {
-        $data['tikets'] = $this->tiket->read_all();
-        $this->load->view('layouts/head', $data);
-        $this->load->view('admin/tiket/index');
-        $this->load->view('layouts/footer');
+        if ($this->session->userdata('login')) {
+            if ($this->session->userdata('tipe_user') == 'Admin') {
+                $data['tikets'] = $this->tiket->read_all();
+                $this->load->view('layouts/head', $data);
+                $this->load->view('admin/tiket/index');
+                $this->load->view('layouts/footer');
+            } else {
+                redirect('home');
+            }
+        } else {
+            redirect('auth');
+        }
     }
+
     public function create()
     {
         $this->form_validation->set_rules('kategori_hari', 'kategori_hari', 'required', [
@@ -40,7 +50,7 @@ class Tiket extends CI_Controller
             } else {
                 $this->session->set_flashdata('alert', alert('error', 'Tiket gagal di buat'));
             }
-            redirect('tiket/create');
+            redirect('tiket');
         }
     }
     public function update($Id_tiket = null)
@@ -58,8 +68,10 @@ class Tiket extends CI_Controller
             $this->form_validation->set_rules('jam_selesai_kunjungan', 'jam_selesai_kunjungan', 'required', [
                 'required' => 'jam selesai kunjungan wajib di isi'
             ]);
+
             if ($this->form_validation->run() == FALSE) { // jika validasi gagal
                 $data['tiket'] = $this->tiket->read_by_id($Id_tiket);
+
                 $this->load->view('layouts/head', $data);
                 $this->load->view('admin/tiket/update');
                 $this->load->view('layouts/footer');
@@ -67,9 +79,9 @@ class Tiket extends CI_Controller
                 $_POST += ['Id_tiket' => $Id_tiket];
                 $insert_tiket = $this->tiket->update($_POST);
                 if ($insert_tiket) {
-                    $this->session->set_flashdata('alert', alert('success', 'Tiket berhasil di buat'));
+                    $this->session->set_flashdata('alert', alert('success', 'Tiket berhasil di update'));
                 } else {
-                    $this->session->set_flashdata('alert', alert('error', 'Tiket gagal di buat'));
+                    $this->session->set_flashdata('alert', alert('error', 'Tiket gagal di update'));
                 }
                 redirect('tiket');
             }
@@ -77,8 +89,12 @@ class Tiket extends CI_Controller
             redirect('tiket');
         }
     }
-    public function delete()
+    public function delete($tiketId)
     {
-        echo "Fitur delete tiket";
+        $this->db->where("id_tiket", $tiketId);
+        $this->db->delete("tiket");
+
+        $this->session->set_flashdata('alert', alert('success', 'Tiket berhasil di hapus'));
+        redirect("tiket");
     }
 }

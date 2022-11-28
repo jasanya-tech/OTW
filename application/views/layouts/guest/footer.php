@@ -5,12 +5,12 @@
                 <h5>HUBUNGI KAMI</h5>
                 <p>Hubungi kami untuk informasi lebih lanjut ataupun pemesanan tiket.</p>
                 <p>tlp : 0812345678</p>
-                <p>Whatsapp :</p>
-                <p>Email :</p>
+                <p>Whatsapp : 0812345678</p>
+                <p>Email : admin@otw.com</p>
             </div>
             <div class="col text-end">
                 <h5>Alamat Curug Landung</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam, repudiandae quos facere sint nihil maxime, tenetur porro recusandae officia et commodi, temporibus quis molestias voluptatum saepe ut numquam neque dicta quia eos laborum ducimus ipsa?</p>
+                <p>3C3P+Q8R, Jl. Pejambon-Sagara Hiang, Cisantana, Kec. Cigugur, Kabupaten Kuningan, Jawa Barat 45552</p>
             </div>
         </div>
     </div>

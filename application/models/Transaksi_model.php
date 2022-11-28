@@ -12,8 +12,37 @@ class Transaksi_model extends CI_Model
 
     public function read_all()
     {
-        return $query = $this->db->get('transaksi')->result();
+        $this->db->select('*');
+        $this->db->from('transaksi');
+        $this->db->join('tiket', 'tiket.Id_tiket = transaksi.id_tiket');
+        $this->db->join('detail_transaksi', 'detail_transaksi.id_transaksi = transaksi.Id_transaksi');
+
+        return $this->db->get()->result();
     }
+
+    public function read_by_id_pengunjung($pengunjungId)
+    {
+        $this->db->select('*');
+        $this->db->from('transaksi');
+        $this->db->where('transaksi.Id_pengunjung', $pengunjungId);
+        $this->db->join('tiket', 'tiket.Id_tiket = transaksi.id_tiket');
+        $this->db->join('detail_transaksi', 'detail_transaksi.id_transaksi = transaksi.Id_transaksi');
+
+        return $this->db->get()->result();
+    }
+
+    public function read_by_id($transaksiId)
+    {
+        $this->db->select('*');
+        $this->db->from('transaksi');
+        $this->db->where('transaksi.Id_transaksi', $transaksiId);
+        $this->db->join('tiket', 'tiket.Id_tiket = transaksi.id_tiket');
+        $this->db->join('metode_pembayaran', 'metode_pembayaran.Id_MP = transaksi.Id_MP');
+        $this->db->join('detail_transaksi', 'detail_transaksi.id_transaksi = transaksi.Id_transaksi');
+
+        return $this->db->get()->row();
+    }
+
     public function create($data)
     {
         $this->qty = $data['qty'];

@@ -17,9 +17,27 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('home/fasilitas') ?>">Fasilitas</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Tiket</a>
-                </li>
+                <?php if ($this->session->userdata('tipe_user') == 'Pengunjung') : ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url("home/tiket"); ?>">Tiket</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url("home/transaksi"); ?>">Transaksi</a>
+                    </li>
+                <?php elseif ($this->session->userdata('tipe_user') == 'Admin') : ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url("admin"); ?>">Dashboard</a>
+                    </li>
+                <?php endif ?>
+                <?php if ($this->session->userdata("login")) : ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url("auth/logout"); ?>">Logout</a>
+                    </li>
+                <?php else : ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url("auth"); ?>">Login</a>
+                    </li>
+                <?php endif ?>
             </ul>
         </div>
     </div>

@@ -17,6 +17,7 @@ class Tiket_model extends CI_Model
     {
         return $this->db->get_where('tiket', ['Id_tiket' => $Id_tiket])->row();
     }
+
     public function create($tiket)
     {
         $this->kategori_hari = $tiket['kategori_hari'];

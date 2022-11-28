@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<?= base_url('assets\plugins\swiper\swiper-bundle.css') ?>">
     <script src="<?= base_url('assets\plugins\swiper\swiper-bundle.min.js') ?>"></script>
     <!-- end Swiper -->
-    <title>Order tiket Waterfall</title>
+    <title><?= $title; ?></title>
 </head>
 
 <body>

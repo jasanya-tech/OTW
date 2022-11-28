@@ -36,5 +36,9 @@
 <div class="sidebar">
     <a class="<?= str_contains(current_url(), 'admin') ? 'active' : '' ?>" href="<?= base_url('admin') ?>">Dashboard</a>
     <a class="<?= str_contains(current_url(), 'tiket') ? 'active' : '' ?>" href="<?= base_url("tiket") ?>">Tiket</a>
-    <a class="<?= str_contains(current_url(), 'transaksi') ? 'active' : '' ?>" href="<?= base_url("transaksi") ?>">Transaksi</a>
+    <a class="<?= str_contains(current_url(), 'transaksi') ? 'active' : '' ?>" href="<?= base_url('transaksi') ?>">Transaksi</a>
+    <a class="<?= str_contains(current_url(), 'metode_pembayaran') ? 'active' : '' ?>" href="<?= base_url('metode_pembayaran') ?>">Metode Pembayaran</a>
+    <a class="<?= str_contains(current_url(), 'fasilitas') ? 'active' : '' ?>" href="<?= base_url('fasilitas') ?>">fasilitas</a>
+    <a class="<?= str_contains(current_url(), 'admin/register') ? 'active' : '' ?>" href="<?= base_url('admin/register') ?>">tambah admin</a>
+    <a class="<?= str_contains(current_url(), 'auth/logout') ? 'active' : '' ?>" href="<?= base_url('auth/logout') ?>">logout</a>
 </div>
