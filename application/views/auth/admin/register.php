@@ -2,7 +2,7 @@
     <div class="col-lg-4">
         <main class="form-signin">
             <form action="<?= base_url("admin/register"); ?>" method="post">
-                <h1 class="h3 mb-3 fw-normal text-center mt-3">Form admin register</h1>
+                <h1 class="h3 mb-3 fw-normal text-center mt-3 text-capitalize">Form Tambah Admin</h1>
                 <div class="mb-2">
                     <label for="nama" class="form-label">Nama</label>
                     <input type="text" class="form-control <?= (form_error("nama")) ? "is-invalid" : ''; ?>" id="nama"
