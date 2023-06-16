@@ -14,6 +14,8 @@ class Home extends CI_Controller
 
 	public function index()
 	{
+		var_dump(password_hash('12345678', PASSWORD_DEFAULT));
+		die;
 		$data['title'] = 'Home';
 		$data['fasilities'] = $this->fasilitas->read_all();
 		$this->load->view('layouts/guest/head', $data);

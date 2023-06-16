@@ -14,6 +14,10 @@ class Pengunjung_model extends CI_Model
     {
         return $query = $this->db->get('pengunjung')->result();
     }
+    public function getById($id)
+    {
+        return $this->db->get_where('pengunjung', ['Id_pengunjung' => $id])->row();
+    }
     public function create($data)
     {
         $this->nama = $data['nama'];

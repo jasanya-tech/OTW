@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container">
         <a class="navbar-brand" href="<?= base_url('home'); ?>">
             <img src="<?= base_url('assets\img\logo-otw.jpg') ?>" class="rounded-circle" width="50" height="50" alt="" srcset=""></a>

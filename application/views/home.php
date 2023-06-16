@@ -29,7 +29,7 @@
             <h4 class="mb-4">Welcome To Landung Waterfall</h4>
             <p class="m-0">Jam Operasional Weekday: 09:00 - 17:00 & Weekend : 08:00 - 18:00</p>
             <p class="m-0">Harga Tiket Masuk Weedays : Rp. 30.000 & Weekends Rp. 35.000</p>
-            <p class="m-0">Sudah FREE Wahana Gembok Cinta, Coral Land, Love Island, Kampung Dayang Sumbi dll</p>
+            <p class="m-0">Sudah FREE Wahana </p>
             <p class="m-0">Tiket Bisa Di Tukarkan Dengan Souvenir</p>
         </div>
         <div class="col-4 d-flex justify-content-center align-items-center">

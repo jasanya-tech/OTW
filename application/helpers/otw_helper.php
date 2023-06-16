@@ -26,3 +26,12 @@ if (!function_exists('str_contains')) {
         return '' === $needle || false !== strpos($haystack, $needle);
     }
 }
+
+function get_user_by_id($id){
+
+	$CI3 = get_instance();
+    $CI3->load->model('Pengunjung_model', 'pengunjung');
+	$pengunjung = $CI3->pengunjung->getById($id);
+	if(!$pengunjung) return null;
+	return $pengunjung;
+}

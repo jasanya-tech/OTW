@@ -16,6 +16,7 @@ class Transaksi extends CI_Controller
         if ($this->session->userdata('login')) {
             if ($this->session->userdata('tipe_user') == 'Admin') {
                 $data['transaksi'] = $this->transaksi->read_all();
+                $data['title'] = 'Data Transaksi Tiket OTW';
 
                 $this->load->view('layouts/head', $data);
                 $this->load->view('admin/transaksi/index');
