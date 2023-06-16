@@ -15,10 +15,12 @@
                         name="password" required />
                 </div>
                 <button class="btn btn-primary mb-2" style="width: 100%">Login</button>
-                <p class="m-0">Belum punya akun ? <a href="<?= base_url("auth/register"); ?>"
-                        class="text-decoration-none">Register</a></p>
-                <p>Login sebagai admin ? <a href="<?= base_url("admin/login"); ?>"
-                        class="text-decoration-none">Login</a></p>
+				<div class="d-flex flex-column align-items-center gap-2">
+					<p class="m-0">Belum punya akun ? <a href="<?= base_url("auth/register"); ?>"
+							class="text-decoration-none">Register</a></p>
+					<p>Login sebagai <a href="<?= base_url("admin/login"); ?>"
+							class="text-decoration-none">Admin</a> ?</p>
+				</div>
             </form>
         </main>
     </div>

@@ -35,3 +35,8 @@ function get_user_by_id($id){
 	if(!$pengunjung) return null;
 	return $pengunjung;
 }
+
+function is_login() {
+	$CI3 = get_instance();
+	if (!$CI3->session->userdata('login')) return redirect('home');
+}

@@ -7,6 +7,7 @@ class Fasilitas extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Fasilitas_model', 'fasilitas');
+		is_login();
     }
 
     public function index()
@@ -99,7 +100,7 @@ class Fasilitas extends CI_Controller
         unlink(FCPATH . 'assets/img/fasilitas/' . $fasilitas->image);
         $this->db->where('fasilitas_id', $faslitasId);
         $this->db->delete('fasilitas');
-        $this->session->set_flashdata('alert', alert('success', 'Metode pembayaran berhasil di hapus'));
+        $this->session->set_flashdata('alert', alert('success', 'Fasilitas berhasil di hapus'));
         redirect('fasilitas');
     }
 }

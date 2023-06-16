@@ -7,6 +7,7 @@ class Tiket extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Tiket_model', 'tiket');
+		is_login();
     }
 
     public function index()
